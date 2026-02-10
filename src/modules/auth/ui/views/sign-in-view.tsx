@@ -11,7 +11,7 @@ import { useRouter } from 'next/navigation';
 import {FaGithub, FaGoogle } from 'react-icons/fa';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { Alert, AlertTitle } from '@/components/ui/alert';
-import { OctagonAlertIcon, OctagonIcon } from 'lucide-react';
+import { OctagonAlertIcon, OctagonIcon, Mic } from 'lucide-react';
 import Link from 'next/link';
 
 import { authClient } from '@/lib/auth-client';
@@ -154,9 +154,16 @@ export default function SignInView() {
                   </div>
                 </form>
                </Form>
-                <div className="bg-gradient-to-br from-blue-400 via-pink-600 to-yellow-300 relative hidden md:flex flex-col gap-y-4 items-center justify-center h-full w-full p-4">
-                    <img src='/logo.png' alt='logo' className='h-[92px] w-[92px] rounded-2xl'></img>
-                    <p className='text-2xl font-semibold text-white'>SpeakUP</p>
+                <div className="bg-gradient-to-br from-primary via-[#5B5BFF] to-secondary relative hidden md:flex flex-col gap-y-4 items-center justify-center h-full w-full p-4 overflow-hidden">
+                    {/* Background glows */}
+                    <div className="absolute top-10 left-10 w-32 h-32 bg-white/20 rounded-full blur-2xl" />
+                    <div className="absolute bottom-10 right-10 w-32 h-32 bg-white/10 rounded-full blur-2xl" />
+                    
+                    <div className="bg-white/10 backdrop-blur-md p-4 rounded-2xl border border-white/20 shadow-xl">
+                      <Mic className="h-12 w-12 text-white" />
+                    </div>
+                    <p className='text-3xl font-bold text-white tracking-tight'>PodAI</p>
+                    <p className='text-white/80 text-sm font-medium'>Read less. Listen smarter.</p>
                 </div>
             </CardContent>
         </Card>
